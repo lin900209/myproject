@@ -10,6 +10,15 @@ public class Main {
     public static final int FEE =30;
 
     public static void main(String[] args) {
+        String data = "AA-1122/15922799266533/0";
+        String[] ss = data.split("/");
+        System.out.println(ss[0]);
+        System.out.println(ss[1]);
+        System.out.println(ss[2]);
+        Car c = new Car(ss[0]);
+        c.enter = Long.parseLong(ss[1]);
+        c.leave = Long.parseLong(ss[2]);
+
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         List<Car> cars = new ArrayList<>();
         System.out.println("Welcome to packing lot Managent System");
@@ -26,7 +35,7 @@ public class Main {
                 case 1:
                     System.out.println("Please enter Car ID:");
                     String id = scanner.nextLine();
-                    Car c = new Car(id);
+                    Car c1 = new Car(id);
                     cars.add(c);
                     System.out.println("Car added");
                     break;
